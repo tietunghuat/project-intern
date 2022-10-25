@@ -1,37 +1,20 @@
-<template>
-  <ul class="cards">
-    <li class="cards_item" v-for="product in products" :key="product.id">
-      <div class="card">
-        <div class="card_image">
-          <img :src="product.img_url" />
-        </div>
-
-              <div class="card_content">
-                <h2 class="card_title">{{ product.name }}</h2>
-                <h3>{{ product.unit }} {{ product.price }}</h3>
-
-                <p class="card_text">
-                  {{ product.details }}
-                </p>
-                <button class="btn">Add To Cart</button>
-              </div>
-      </div>
-    </li>
-  </ul>
-</template>
-
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType, ref } from "vue";
 import BoxItem from "@/types/Box";
+
 export default defineComponent({
-  props: {
-    products: {
-      required: true,
-      type: Array as PropType<BoxItem[]>,
-    },
-  },
+  // props: {
+  //   products: {
+  //     required: true,
+  //     type: Array as PropType<BoxItem[]>,
+  //   },
+  // }
+  setup() {},
 });
 </script>
+<template>
+  <slot name="boxcontent"> </slot>
+</template>
 
 <style scoped>
 .btn {
@@ -84,6 +67,7 @@ export default defineComponent({
 .card_content {
   position: relative;
   max-height: 1100px;
+  width: 100%;
   background: rgba(5, 5, 5, 0.829);
 }
 

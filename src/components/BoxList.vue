@@ -1,21 +1,18 @@
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+import Box from "./Box.vue";
+export default defineComponent({
+  components: {
+    Box,
+  },
+});
+</script>
+
 <template>
   <div class="Multi-Box">
-    
-    <BoxContent/>
-
+    <Box />
   </div>
-
 </template>
-
-<script lang="ts">
-import { defineComponent ,ref} from "vue";
-import BoxContent from "./Box.vue";
-export default defineComponent({
-    components:{
-    BoxContent
-}
-})
-</script>
 
 <style scoped>
 .Multi-Box {
